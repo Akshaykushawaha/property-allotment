@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter ,Switch, Routes, Router, Route } from 'react-router-dom';
+// import AllUsers from './Components/showal';
+// import TopBar from './Components/TopBar/TopBar';
+import 'bootstrap/dist/js/bootstrap'
+// import SideBar from './Components/SideBar/SideBar';
+// import UserDashboard from './Components/User/UserDashboard';
+// import AdminDashboard from './Components/Admin/AdminDashboard';
+import UserLoginPage from './Pages/UserLoginPage';
+import NotFoundPage from './Pages/NotFoundPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserLoginPage/>
   );
 }
 
