@@ -8,10 +8,21 @@ import {
     MDBCardFooter
 } from 'mdb-react-ui-kit';
 import "./Card.css";
-import { FaPlus } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const PlusBox = (props) => {
+    const PlusIcon = () => (
+  <div
+    style={{
+      color: 'white',
+      fontSize: '48px',
+      lineHeight: '0.5',
+      textAlign: 'center',
+    }}
+  >
+    &#43;
+  </div>
+);
     const name = props.name;
     const navigate = useNavigate();
     const handleClick = () => {
@@ -27,7 +38,7 @@ const PlusBox = (props) => {
         onClick={handleClick}
         style={{ width: '100px', height: '100px', backgroundColor: '#5cb85c', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px', border: 'none', cursor: 'pointer' }}
       >
-        <FaPlus style={{ color: 'white', fontSize: '48px' }} />
+       <PlusIcon />
       </button>
       <MDBCardBody>
         <MDBCardText style={{ fontSize: '18px', fontWeight: 'bold' }}>{name}</MDBCardText>
