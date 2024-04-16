@@ -19,42 +19,48 @@ const SideBar = (props) => {
   return (
     
     <div className="sidebar" style={{ boxShadow: '3px 0px 8px rgba(0, 0, 0, 0.4)' }}>
-      <h3>{props.name}</h3>
+      <h4>{props.name}'s Utilities</h4>
       <ul className="sidebar-list">
         <li>
           <a href="#" onClick={() => handleButtonClick("assets")}>
-            <FontAwesomeIcon icon={faHome} className="icon" />
+            🏠
             Assets
           </a>
         </li>
         <li>
           <a href="#" onClick={() => handleButtonClick("maintenance")}>
-            <FontAwesomeIcon icon={faTools} className="icon" />
+            🛠️
             Maintenance
           </a>
         </li>
         <li>
           <a href="#" onClick={() => handleButtonClick("profile")}>
-            <FontAwesomeIcon icon={faUser} className="icon" />
+            😄
             Profile
           </a>
         </li>
         <li>
           <a href="#" onClick={() => handleButtonClick("request")}>
-            <FontAwesomeIcon icon={faBoxOpen} className="icon" />
+            📥
             Request Asset
           </a>
         </li>
         <li>
           <a href="#" onClick={() => handleButtonClick("release")}>
-            <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
+            📤
             Release Asset
           </a>
         </li>
         <li>
           <a href="#" onClick={() => handleButtonClick("enquire")}>
-            <FontAwesomeIcon icon={faQuestionCircle} className="icon" />
+            ❓
             Enquire
+          </a>
+        </li>
+        <li>
+          <a href="#" onClick={() => handleButtonClick("PreviousEnquiry")}>
+            🙋‍♂️
+            Previous Enquiry
           </a>
         </li>
         <li></li>

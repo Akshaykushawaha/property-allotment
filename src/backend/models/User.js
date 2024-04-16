@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const collectionName = 'user';
+const collectionName = 'employees';
 
 // Get a reference to the collection
 const User = mongoose.connection.collection(collectionName);
