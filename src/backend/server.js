@@ -8,6 +8,8 @@ const schdRoutes = require("./routes/schdRoutes");
 const enquiryRoutes = require("./routes/enquiryRoutes");
 const requestAccess = require("./routes/requestAccess");
 const releaseRequest = require("./routes/releaseRequest");
+const verifyUserRoute = require("./routes/verifyUserRoute"); // Import verify user route
+
 
 const app = express();
 
@@ -26,6 +28,7 @@ app.use("/api/schdmaintain", schdRoutes)
 app.use("/api/enquiry", enquiryRoutes)
 app.use("/api/requestaccess", requestAccess)
 app.use("/api/releaserequest", releaseRequest)
+app.use("/api", verifyUserRoute);
 
 // Start the server
 const PORT = process.env.PORT || 5050;

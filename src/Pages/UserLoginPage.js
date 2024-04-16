@@ -15,7 +15,6 @@ import {
 import './UserLoginPage.css'
 import TopBar from '../Components/TopBar/TopBar';
 import Footer from '../Components/Footer/Footer';
-import userData from '../conifg.json';
 
 const UserLoginPage = () => {
   useEffect(() => {
@@ -36,14 +35,32 @@ const UserLoginPage = () => {
   };
 
   const handleLogin = () => {
-    const user = userData.find((user) => user.email === email);
-    if (user && user.password === password) {
-      sessionStorage.setItem('loggedInUser', JSON.stringify(user));
-      navigate('/userDashboard'); 
-    } else {
-      alert('Incorrect email or password');
-    }
+    // Make a POST request to your server's user verification endpoint
+    fetch('http://localhost:5050/api/verify-user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.verified) {
+        // If user is verified, set loggedInUser in sessionStorage
+        const user = { email };
+        sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+        navigate('/userDashboard');
+      } else {
+        // If user is not verified, show alert
+        alert('Incorrect email or password');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Error occurred while logging in');
+    });
   };
+  
 
   return (
     <div className='gradient_background'>
